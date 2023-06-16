@@ -1,6 +1,5 @@
 <?php
 
-use App\Models\ChatMessage;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Broadcast;
 
@@ -19,22 +18,8 @@ use Illuminate\Support\Facades\Broadcast;
 //     return (int) $user->id === (int) $id;
 // });
 
-Broadcast::channel('message.{roomId}', function ($roomId, $message) {
+// Broadcast::channel('message.{roomId}', function ($roomId, $message) {
 
-    // $messages = ChatMessage::with('user')->where('room_id', $roomId)->get()->toArray();
-    // return [
-    //     'user' => Auth::user(),
-    //     'messages' => $messages,
-    // ];
-    return $roomId;
-});
-
-
-Broadcast::channel('unread_messages_count.{roommateId}', function ($users) {
-    return 111;
-});
-
-Broadcast::channel('all_unread_messages.{roommateId}', function ($users) {
-    return 111;
-});
+//     return $roomId;
+// });
 
