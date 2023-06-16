@@ -1,22 +1,8 @@
 <?php
 
-use App\Http\Controllers\API\Banner\BannerController;
-use App\Http\Controllers\API\ContactInfo\ContactInfoController;
-use App\Http\Controllers\API\CurrentEarthquake\CurrentEarthquakeController;
-use App\Http\Controllers\API\CurrentEarthquake\FilterController;
-use App\Http\Controllers\API\Feedback\CreateController;
-use App\Http\Controllers\API\Feedback\FedbackController;
-use App\Http\Controllers\API\Footer\FooterController;
-use App\Http\Controllers\API\GlobalMonitoring\GlobalMonitoringController;
 use App\Http\Controllers\API\Home\HomeController;
 use App\Http\Controllers\API\LanguageController;
-use App\Http\Controllers\API\MapRegion\MapRegionController;
-use App\Http\Controllers\API\MapRegion\MapRegionTranslationController;
-use App\Http\Controllers\API\News\NewsController;
-use App\Http\Controllers\API\PressReleases\FilterController as PressReleasesFilterController;
 use App\Http\Controllers\API\PressReleases\PressReleaseController;
-use App\Http\Controllers\API\RegionalMonitoring\RegionalMonitoringController;
-use App\Http\Controllers\API\SmartSearch\SmartSearchController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -41,33 +27,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::apiResources([
 
-    'press-releases' => PressReleaseController::class,
-    'current-earthquake' => CurrentEarthquakeController::class,
-    'news' => NewsController::class,
-    'regions'=>GlobalMonitoringController::class,
-    'regional-monitoring' => RegionalMonitoringController::class
+    // 'press-releases' => PressReleaseController::class,
+
 ]);
 
 Route::get('languages', [LanguageController::class, 'index']);
 Route::get('home', [HomeController::class, 'index']);
-Route::get('footer/social-links', [FooterController::class, 'social_links']);
-
-Route::post('feedback/create', [CreateController::class, 'index']);
-
-Route::get('contact-info', [ContactInfoController::class, 'index']);
-
-Route::get('current-earthquakes-filter', [FilterController::class, 'filter']);
-
-Route::get('press-releases-filter', [PressReleasesFilterController::class, 'filter']);
-
-Route::get('smart-search', [SmartSearchController::class, 'index']);
-
-Route::get('map-region-info/{id}',[MapRegionController::class,'mapRegionInfo']);
-Route::get('region-info/{id}',[MapRegionController::class,'regionInfo']);
-
-Route::get('map-region-translation',[MapRegionTranslationController::class,'index']);
-
-Route::get('banner',[BannerController::class,'index']);
 
 
 

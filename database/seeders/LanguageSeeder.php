@@ -31,7 +31,7 @@ class LanguageSeeder extends Seeder
 
         Language::create( [
             'id'=>3,
-            'name'=>'am',
+            'name'=>'hy',
             'created_at'=>NULL,
             'updated_at'=>NULL
         ] );
